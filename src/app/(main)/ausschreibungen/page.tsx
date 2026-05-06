@@ -9,6 +9,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase";
 import { useAuth } from "@/components/providers/auth-provider";
 import { APP_URL } from "@/lib/site";
+import { ComingSoonOverlay } from "@/components/ui-custom/ComingSoonOverlay";
 
 const PUBLIC_LIMIT = 10;
 
@@ -85,6 +86,7 @@ export default function AusschreibungenPage() {
 
   return (
     <div className="bg-slate-50 min-h-screen pb-24">
+      <ComingSoonOverlay />
       {/* ─── Hero ─────────────────────────────────────────────────────── */}
       <HeroSection
         badge="Live-Ausschreibungen"
