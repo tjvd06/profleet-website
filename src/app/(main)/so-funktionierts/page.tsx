@@ -247,7 +247,7 @@ export default function HowItWorksPage() {
               </Card>
             </div>
 
-            
+
 
             </div>
           )}
