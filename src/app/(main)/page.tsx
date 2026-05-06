@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { HeroSection } from "@/components/ui-custom/HeroSection";
-import { ArrowRight, BarChart3, Briefcase, CheckCircle2, Clock, Gavel, Layers, Package, Search, ShieldCheck, ShoppingCart, Sliders, TrendingDown, Users, Wallet, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Gavel, Package, Search, ShieldCheck, ShoppingCart, Sparkles, TrendingDown, Users, Zap } from "lucide-react";
 import { APP_URL } from "@/lib/site";
 
 export default function HomePage() {
@@ -163,64 +163,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Differentiators */}
-      <section className="bg-slate-50 py-24">
-        <div className="container mx-auto max-w-7xl px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-700 border-none font-semibold mb-4">Was uns auszeichnet</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy-950 mb-4 tracking-tight">Sechs Gründe für proFleet</h2>
-            <p className="text-lg text-slate-500 max-w-3xl mx-auto">Was Sie auf anderen Plattformen nicht in dieser Form finden.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 text-white flex items-center justify-center mb-5 shadow-lg shadow-blue-500/20">
-                <Sliders size={26} />
-              </div>
-              <h3 className="text-xl font-bold text-navy-950 mb-2">Detaillierte Konfiguration</h3>
-              <p className="text-slate-600 leading-relaxed">Beschreiben Sie Ihr Wunschfahrzeug bis ins Detail — Marke, Motorisierung, Ausstattung, Farbe. Händler bekommen exakt, was Sie brauchen.</p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-white flex items-center justify-center mb-5 shadow-lg shadow-purple-500/20">
-                <Layers size={26} />
-              </div>
-              <h3 className="text-xl font-bold text-navy-950 mb-2">Alle Marken, eine Plattform</h3>
-              <p className="text-slate-600 leading-relaxed">Audi, BMW, Mercedes, VW, Tesla, Stellantis — markenübergreifend vergleichen, ohne 10 verschiedene Konfiguratoren öffnen zu müssen.</p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center mb-5 shadow-lg shadow-emerald-500/20">
-                <BarChart3 size={26} />
-              </div>
-              <h3 className="text-xl font-bold text-navy-950 mb-2">Transparente Angebote</h3>
-              <p className="text-slate-600 leading-relaxed">Alle eingehenden Angebote nebeneinander — Kaufpreis, Leasingrate, Lieferzeit, Inzahlungnahme. Keine versteckten Posten.</p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 text-white flex items-center justify-center mb-5 shadow-lg shadow-amber-500/20">
-                <ShieldCheck size={26} />
-              </div>
-              <h3 className="text-xl font-bold text-navy-950 mb-2">Verifizierte Händler</h3>
-              <p className="text-slate-600 leading-relaxed">Jedes Autohaus, jede Leasinggesellschaft wird vor Freischaltung geprüft. Kein Privatverkäufer, keine Phantom-Anbieter.</p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-navy-700 to-navy-900 text-white flex items-center justify-center mb-5 shadow-lg shadow-navy-900/20">
-                <Briefcase size={26} />
-              </div>
-              <h3 className="text-xl font-bold text-navy-950 mb-2">Reine B2B-Plattform</h3>
-              <p className="text-slate-600 leading-relaxed">Ausschließlich Geschäftskunden auf beiden Seiten. Kein Privatkunden-Rauschen, klare Konditionen, professionelle Kommunikation.</p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-red-500 text-white flex items-center justify-center mb-5 shadow-lg shadow-rose-500/20">
-                <Wallet size={26} />
-              </div>
-              <h3 className="text-xl font-bold text-navy-950 mb-2">Kostenlos für Käufer</h3>
-              <p className="text-slate-600 leading-relaxed">Sie zahlen nichts — keine Anmeldegebühr, keine Provision, keine versteckten Aufschläge auf Angebote. Wir finanzieren uns über Händler-Abos.</p>
-            </div>
-          </div>
+      {/* Pre-Launch Announcement */}
+      <section className="bg-white py-24">
+        <div className="container mx-auto max-w-4xl px-4 text-center">
+          <Badge className="inline-flex items-center bg-blue-50 text-blue-700 border border-blue-200 font-semibold mb-6 px-4 py-1.5 text-sm">
+            <Sparkles size={14} className="mr-1.5" />
+            Pre-Launch
+          </Badge>
+          <h2 className="text-4xl md:text-6xl font-black text-navy-950 mb-6 tracking-tight">
+            Launch im{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
+              April 2027
+            </span>
+          </h2>
+          <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto">
+            proFleet ist derzeit im Aufbau. Vorregistrierung ist offen — alle Nutzer durchlaufen eine manuelle Verifikation und werden rechtzeitig zum Start freigeschaltet.
+          </p>
+          <Link href={`${APP_URL}/registrieren`}>
+            <Button size="lg" className="rounded-xl bg-gradient-to-r from-blue-500 to-cyan-400 hover:opacity-90 text-white font-semibold px-8 h-14 text-lg shadow-lg shadow-blue-500/20">
+              Jetzt vorregistrieren <ArrowRight size={18} className="ml-2" />
+            </Button>
+          </Link>
         </div>
       </section>
 
