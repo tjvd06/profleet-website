@@ -9,7 +9,7 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "proFleet 2.0",
+  title: "proFleet",
   description: "Fahrzeugausschreibungen für Unternehmen",
 };
 
