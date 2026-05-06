@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { HeroSection } from "@/components/ui-custom/HeroSection";
-import { ArrowRight, CheckCircle2, Clock, Gavel, Package, Search, ShieldCheck, ShoppingCart, Sparkles, TrendingDown, Users, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Gavel, Lock, Package, Search, ShieldCheck, ShoppingCart, Sparkles, TrendingDown, Users, Zap } from "lucide-react";
 import { APP_URL } from "@/lib/site";
 
 export default function HomePage() {
@@ -17,18 +17,22 @@ export default function HomePage() {
         subtitle="Stöbern Sie in Sofort-Angeboten von Händlern oder starten Sie eine Ausschreibung und lassen Sie Händler um Ihren Auftrag bieten."
       >
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
-          <Link href="/sofort-angebote">
-            <Button size="lg" className="rounded-xl bg-white text-navy-900 hover:bg-slate-100 font-semibold px-8 h-14 text-lg shadow-lg w-full">
-              <ShoppingCart size={20} className="mr-2" />
-              Sofort-Angebote entdecken
-            </Button>
-          </Link>
-          <Link href={`${APP_URL}/dashboard/ausschreibung/neu`}>
-            <Button size="lg" className="rounded-xl bg-gradient-to-r from-blue-500 to-cyan-400 hover:opacity-90 text-white font-semibold px-8 h-14 text-lg w-full">
-              <Gavel size={20} className="mr-2" />
-              Ausschreibung starten
-            </Button>
-          </Link>
+          <Button
+            size="lg"
+            disabled
+            className="rounded-xl bg-white/80 text-slate-500 font-semibold px-8 h-14 text-lg shadow-lg w-full border border-white/20 cursor-not-allowed"
+          >
+            <Lock size={18} className="mr-2" />
+            Sofort-Angebote entdecken
+          </Button>
+          <Button
+            size="lg"
+            disabled
+            className="rounded-xl bg-slate-700/80 text-slate-300 font-semibold px-8 h-14 text-lg w-full border border-slate-600/40 cursor-not-allowed"
+          >
+            <Lock size={18} className="mr-2" />
+            Ausschreibung starten
+          </Button>
         </div>
         <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-slate-400 text-sm font-medium">
           <span className="flex items-center gap-2"><CheckCircle2 size={18} className="text-green-400" /> Kostenlos für Unternehmen</span>
@@ -89,11 +93,14 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <Link href={`${APP_URL}/dashboard/ausschreibung/neu`}>
-                <Button size="lg" className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-semibold h-14 text-lg">
-                  Ausschreibung starten <ArrowRight size={18} className="ml-2" />
-                </Button>
-              </Link>
+              <Button
+                size="lg"
+                disabled
+                className="w-full rounded-xl bg-slate-200 text-slate-500 font-semibold h-14 text-lg border border-slate-300 cursor-not-allowed"
+              >
+                <Lock size={18} className="mr-2" />
+                Ausschreibung starten
+              </Button>
             </div>
 
             {/* Sofort-Angebote */}
@@ -139,11 +146,14 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <Link href="/sofort-angebote">
-                <Button size="lg" className="w-full rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold h-14 text-lg">
-                  Angebote durchstöbern <ArrowRight size={18} className="ml-2" />
-                </Button>
-              </Link>
+              <Button
+                size="lg"
+                disabled
+                className="w-full rounded-xl bg-slate-200 text-slate-500 font-semibold h-14 text-lg border border-slate-300 cursor-not-allowed"
+              >
+                <Lock size={18} className="mr-2" />
+                Angebote durchstöbern
+              </Button>
             </div>
           </div>
         </div>
