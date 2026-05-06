@@ -32,7 +32,7 @@ export function TopNav() {
             href={`${APP_URL}/registrieren`}
             className="rounded-xl bg-gradient-to-r from-blue-500 to-cyan-400 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90 transition-opacity"
           >
-            Kostenlos starten
+            Vorregistrieren
           </a>
         </div>
       </div>

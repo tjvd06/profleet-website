@@ -170,7 +170,7 @@ export function PublicTenderCard({ id, endAt, location, requestedTypes, fleetDis
               </Button>
             </Link>
             <p className="text-xs text-slate-400 text-center mt-2.5 font-medium">
-              Kostenlos als Händler registrieren
+              Als Händler vorregistrieren
             </p>
           </div>
         </div>

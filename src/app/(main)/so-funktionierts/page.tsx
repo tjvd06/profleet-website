@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import {
   CarFront, FileText, BarChart3, MessageCircle, Star,
   Settings, Handshake, Zap, ArrowRight, ShieldCheck, CheckCircle2,
-  Search, Package, UserPlus, Crown
+  Search, Package, UserPlus
 } from "lucide-react";
 import Link from "next/link";
 import { HeroSection } from "@/components/ui-custom/HeroSection";
@@ -44,8 +44,8 @@ const buyerSteps = [
 const dealerSteps = [
   {
     icon: <UserPlus size={32} className="text-navy-900" />,
-    title: "1. Registrieren & Abo wählen",
-    description: "Erstellen Sie Ihr Händlerprofil und wählen Sie das passende Abo — vom kostenlosen Starter-Paket bis zum Premium-Tarif mit unbegrenzten Möglichkeiten."
+    title: "1. Profil anlegen",
+    description: "Erstellen Sie Ihr Händlerprofil und durchlaufen Sie unsere Verifikation. Sobald freigeschaltet, können Sie loslegen."
   },
   {
     icon: <Zap size={32} className="text-navy-900" />,
@@ -209,7 +209,7 @@ export default function HowItWorksPage() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link href={`${APP_URL}/registrieren`}>
                       <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold h-14 px-8 rounded-2xl w-full sm:w-auto shadow-lg shadow-blue-500/25">
-                        Jetzt kostenlos registrieren <ArrowRight className="ml-2" size={18} />
+                        Jetzt vorregistrieren <ArrowRight className="ml-2" size={18} />
                       </Button>
                     </Link>
                   </div>
@@ -240,15 +240,6 @@ export default function HowItWorksPage() {
                         </div>
                         <h3 className="text-2xl font-black text-navy-950 mb-3">{step.title}</h3>
                         <p className="text-slate-500 leading-relaxed font-medium">{step.description}</p>
-
-                        {/* Subscription hint on step 1 */}
-                        {idx === 0 && (
-                          <div className="mt-6 flex flex-wrap gap-2">
-                            <Badge variant="outline" className="text-xs font-bold border-slate-300 text-slate-600">Starter — kostenlos</Badge>
-                            <Badge variant="outline" className="text-xs font-bold border-blue-300 text-blue-600">Pro — 99€/Monat</Badge>
-                            <Badge variant="outline" className="text-xs font-bold border-amber-300 text-amber-700">Premium — 249€/Monat</Badge>
-                          </div>
-                        )}
 
                         {/* Cost hint on step 4 */}
                         {idx === 3 && (
@@ -310,91 +301,11 @@ export default function HowItWorksPage() {
               </Card>
             </div>
 
-            {/* Pricing & Subscription Area */}
             <div className="mt-12 max-w-3xl mx-auto text-center">
-              <h3 className="text-3xl md:text-4xl font-black text-navy-950 mb-6">Abo-Modelle & Preise</h3>
-              <p className="text-lg text-slate-500 font-medium mb-12">
-                Starten Sie kostenlos und skalieren Sie mit Ihrem Geschäft. Zusätzlich zahlen Sie 30€ pro vermitteltem Kontakt bei Ausschreibungen.
+              <h3 className="text-3xl md:text-4xl font-black text-navy-950 mb-6">Preismodell</h3>
+              <p className="text-lg text-slate-500 font-medium mb-10">
+                Das endgültige Preismodell legen wir gemeinsam mit unseren Pilotpartnern fest und kommunizieren es vor dem Launch. Wer sich jetzt vorregistriert, sichert sich attraktive Early-Access-Konditionen.
               </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 text-left">
-                <Card className="p-6 rounded-3xl border-slate-200 bg-white shadow-sm">
-                  <div className="mb-4">
-                    <h4 className="font-black text-navy-950 text-lg">Starter</h4>
-                    <p className="text-2xl font-black text-navy-950 mt-1">Kostenlos</p>
-                  </div>
-                  <ul className="space-y-2 text-sm text-slate-500 font-medium">
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                      Max. 3 Angebote / Monat
-                    </li>
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                      1 aktives Sofort-Angebot
-                    </li>
-                  </ul>
-                </Card>
-
-                <Card className="p-6 rounded-3xl border-blue-200 bg-blue-50/50 shadow-sm ring-2 ring-blue-500/20">
-                  <div className="mb-4">
-                    <div className="flex items-center gap-2">
-                      <h4 className="font-black text-navy-950 text-lg">Pro</h4>
-                      <Badge className="bg-blue-100 text-blue-700 border-blue-200 text-xs font-bold">Beliebt</Badge>
-                    </div>
-                    <p className="text-2xl font-black text-navy-950 mt-1">99€ <span className="text-sm font-bold text-slate-400">/ Monat</span></p>
-                  </div>
-                  <ul className="space-y-2 text-sm text-slate-500 font-medium">
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-blue-500 shrink-0 mt-0.5" />
-                      Unbegrenzte Angebote
-                    </li>
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-blue-500 shrink-0 mt-0.5" />
-                      Bis zu 10 Sofort-Angebote
-                    </li>
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-blue-500 shrink-0 mt-0.5" />
-                      E-Mail-Benachrichtigungen
-                    </li>
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-blue-500 shrink-0 mt-0.5" />
-                      Statistik-Dashboard
-                    </li>
-                  </ul>
-                </Card>
-
-                <Card className="p-6 rounded-3xl border-amber-200 bg-amber-50/30 shadow-sm">
-                  <div className="mb-4">
-                    <div className="flex items-center gap-2">
-                      <h4 className="font-black text-navy-950 text-lg">Premium</h4>
-                      <Crown size={16} className="text-amber-500" />
-                    </div>
-                    <p className="text-2xl font-black text-navy-950 mt-1">249€ <span className="text-sm font-bold text-slate-400">/ Monat</span></p>
-                  </div>
-                  <ul className="space-y-2 text-sm text-slate-500 font-medium">
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-amber-500 shrink-0 mt-0.5" />
-                      Alles aus Pro
-                    </li>
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-amber-500 shrink-0 mt-0.5" />
-                      Unbegrenzte Sofort-Angebote
-                    </li>
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-amber-500 shrink-0 mt-0.5" />
-                      Bevorzugte Platzierung
-                    </li>
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-amber-500 shrink-0 mt-0.5" />
-                      Erweiterte Marktanalysen
-                    </li>
-                    <li className="flex gap-2 items-start">
-                      <CheckCircle2 size={16} className="text-amber-500 shrink-0 mt-0.5" />
-                      Persönlicher Support
-                    </li>
-                  </ul>
-                </Card>
-              </div>
 
               <div className="flex justify-center">
                 <Link href="/fuer-haendler">

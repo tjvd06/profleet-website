@@ -25,10 +25,7 @@ export default function ForDealersLandingPage() {
       >
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mb-16">
           <Button size="lg" className="bg-white text-navy-950 hover:bg-slate-100 font-black h-14 px-8 rounded-2xl shadow-xl shadow-black/20">
-            Jetzt als Anbieter registrieren
-          </Button>
-          <Button size="lg" variant="outline" className="border-blue-400/30 text-white hover:bg-blue-500/20 hover:text-white font-bold h-14 px-8 rounded-2xl bg-transparent backdrop-blur-md">
-            Pricing ansehen
+            Als Anbieter vorregistrieren
           </Button>
         </div>
 
@@ -56,9 +53,9 @@ export default function ForDealersLandingPage() {
             <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
               <ShieldCheck size={28} />
             </div>
-            <h3 className="text-xl font-bold text-navy-950 mb-3">Flexibles Abo-Modell</h3>
+            <h3 className="text-xl font-bold text-navy-950 mb-3">Flexibles Modell</h3>
             <p className="text-sm text-slate-500 font-medium leading-relaxed">
-              Starten Sie kostenlos mit dem Starter-Tarif. Upgraden Sie bei Bedarf auf Pro (99 €/Monat) oder Premium (249 €/Monat) fuer mehr Funktionen.
+              Wir entwickeln das Preismodell gemeinsam mit Pilotpartnern. Faire, transparente Konditionen ohne Lock-In.
             </p>
           </Card>
 
@@ -171,16 +168,9 @@ export default function ForDealersLandingPage() {
 
         <Accordion className="w-full bg-white rounded-3xl border border-slate-200 p-2 shadow-sm">
           <AccordionItem value="item-1" className="border-b-0 px-4">
-            <AccordionTrigger className="text-lg font-bold text-navy-950 hover:no-underline py-6">Ist die Registrierung kostenlos?</AccordionTrigger>
+            <AccordionTrigger className="text-lg font-bold text-navy-950 hover:no-underline py-6">Was kostet die Nutzung?</AccordionTrigger>
             <AccordionContent className="text-slate-500 font-medium text-base leading-relaxed pb-6">
-              Ja, mit dem Starter-Tarif ist die Nutzung komplett kostenlos. Sie koennen bis zu 3 Angebote pro Monat abgeben und 1 Sofort-Angebot aktiv halten — ohne Kreditkarte.
-            </AccordionContent>
-          </AccordionItem>
-          <div className="h-px bg-slate-100 mx-4" />
-          <AccordionItem value="item-2" className="border-b-0 px-4">
-            <AccordionTrigger className="text-lg font-bold text-navy-950 hover:no-underline py-6">Wann entstehen Kosten?</AccordionTrigger>
-            <AccordionContent className="text-slate-500 font-medium text-base leading-relaxed pb-6">
-              Mit dem Pro-Abo (99 €/Monat netto) erhalten Sie unbegrenzte Angebote, bis zu 10 Sofort-Angebote, E-Mail-Benachrichtigungen und ein Statistik-Dashboard. Das Premium-Abo (249 €/Monat netto) bietet zusaetzlich bevorzugte Platzierung, erweiterte Statistiken und persoenlichen Support.
+              Das endgültige Preismodell legen wir gemeinsam mit unseren Pilotpartnern fest und kommunizieren es vor dem Launch. Wer sich jetzt vorregistriert, profitiert von attraktiven Early-Access-Konditionen.
             </AccordionContent>
           </AccordionItem>
           <div className="h-px bg-slate-100 mx-4" />
@@ -202,7 +192,7 @@ export default function ForDealersLandingPage() {
             Registrieren Sie Ihr Autohaus in 3 Minuten und stellen Sie sofort Ihre ersten Angebote ein.
           </p>
           <Button size="lg" className="bg-blue-600 hover:bg-blue-500 text-white font-black h-16 px-12 rounded-2xl shadow-xl shadow-blue-500/20 text-lg">
-            Kostenlos registrieren
+            Jetzt vorregistrieren
           </Button>
         </div>
       </section>

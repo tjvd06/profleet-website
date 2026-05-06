@@ -208,7 +208,7 @@ export default function AusschreibungenPage() {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link href={`${APP_URL}/registrieren`}>
                       <Button className="h-13 px-8 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-bold text-base shadow-lg shadow-blue-600/20">
-                        <UserPlus size={18} className="mr-2" /> Kostenlos registrieren
+                        <UserPlus size={18} className="mr-2" /> Vorregistrieren
                       </Button>
                     </Link>
                     <Link href={`${APP_URL}/anmelden`}>

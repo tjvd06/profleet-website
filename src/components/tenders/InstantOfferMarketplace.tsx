@@ -1885,9 +1885,8 @@ export function InstantOfferMarketplace() {
                       Weitere Angebote verfügbar
                     </h2>
                     <p className="text-slate-600 mb-8 max-w-lg mx-auto">
-                      Registrieren Sie sich kostenlos um alle
-                      Sofort-Angebote zu sehen, zu filtern und Händler zu
-                      kontaktieren.
+                      Registrieren Sie sich, um alle Sofort-Angebote
+                      zu sehen, zu filtern und Händler zu kontaktieren.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                       <Link href={`${APP_URL}/registrieren`}>
@@ -1898,8 +1897,7 @@ export function InstantOfferMarketplace() {
                               "linear-gradient(135deg, #3B82F6, #22D3EE)",
                           }}
                         >
-                          <UserPlus size={18} className="mr-2" /> Kostenlos
-                          registrieren
+                          <UserPlus size={18} className="mr-2" /> Vorregistrieren
                         </Button>
                       </Link>
                       <Link href={`${APP_URL}/anmelden`}>
