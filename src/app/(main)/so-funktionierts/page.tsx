@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import {
   CarFront, FileText, BarChart3, MessageCircle, Star,
   Settings, Handshake, Zap, ArrowRight, ShieldCheck, CheckCircle2,
-  Search, Package, UserPlus, Lock
+  Search, Package, UserPlus
 } from "lucide-react";
 import Link from "next/link";
 import { HeroSection } from "@/components/ui-custom/HeroSection";
@@ -175,14 +175,6 @@ export default function HowItWorksPage() {
                       Kauf, Leasing oder Finanzierung — alle Optionen direkt vergleichbar
                     </li>
                   </ul>
-                  <Button
-                    size="lg"
-                    disabled
-                    className="bg-slate-200 text-slate-500 font-bold h-14 px-8 rounded-2xl border border-slate-300 cursor-not-allowed"
-                  >
-                    <Lock size={18} className="mr-2" />
-                    Sofort-Angebote durchstöbern
-                  </Button>
                 </div>
               </Card>
             </div>
