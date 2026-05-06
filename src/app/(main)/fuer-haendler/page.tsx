@@ -18,8 +18,6 @@ export default function ForDealersLandingPage() {
       
       {/* 1. HERO SECTION */}
       <HeroSection
-        badge="Der B2B Leasing Marktplatz"
-        badgeIcon={<Building2 size={14} />}
         title={<>Mehr Reichweite. <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Null Risiko für Sie.</span></>}
         subtitle="proFleet verbindet deutsche Vertragshändler mit einem gigantischen Netzwerk an B2B-Flottenmanagern und KMUs, die konkret nach Fahrzeugen suchen."
       >

@@ -75,8 +75,6 @@ export default function HowItWorksPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       <HeroSection
-        badge="Der proFleet Prozess"
-        badgeIcon={<Settings size={14} />}
         title="So einfach funktioniert's"
         subtitle="Von der Konfiguration bis zum abgeschlossenen Vertrag — oder direkt zum verfügbaren Fahrzeug. Entdecken Sie den perfekten Ablauf für Einkäufer und Händler."
       />
@@ -179,38 +177,6 @@ export default function HowItWorksPage() {
               </Card>
             </div>
 
-            {/* Fair-Play Rules */}
-            <div className="mt-12 max-w-3xl mx-auto">
-              <Card className="p-8 md:p-12 rounded-[2.5rem] bg-navy-950 text-white shadow-2xl relative overflow-hidden">
-                <div className="absolute -right-20 -top-20 opacity-10 blur-sm pointer-events-none">
-                  <ShieldCheck size={300} />
-                </div>
-                <div className="relative z-10">
-                  <h3 className="text-3xl font-black mb-6">Fair-Play Regeln</h3>
-                  <ul className="space-y-4 mb-10 text-slate-300">
-                    <li className="flex gap-3 items-start font-medium">
-                      <CheckCircle2 className="text-emerald-400 shrink-0 mt-1" size={20} />
-                      Die Nutzung von proFleet ist für einkaufende Unternehmen zu 100% kostenlos — Ausschreibungen und Sofort-Angebote inklusive.
-                    </li>
-                    <li className="flex gap-3 items-start font-medium">
-                      <CheckCircle2 className="text-emerald-400 shrink-0 mt-1" size={20} />
-                      Alle Händlerdaten sind von Anfang an sichtbar — vollständige Transparenz für fundierte Entscheidungen.
-                    </li>
-                    <li className="flex gap-3 items-start font-medium">
-                      <CheckCircle2 className="text-emerald-400 shrink-0 mt-1" size={20} />
-                      Fake-Anfragen werden über unser internes Ratingsystem sanktioniert, um den Markt professionell zu halten.
-                    </li>
-                  </ul>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href={`${APP_URL}/registrieren`}>
-                      <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold h-14 px-8 rounded-2xl w-full sm:w-auto shadow-lg shadow-blue-500/25">
-                        Jetzt vorregistrieren <ArrowRight className="ml-2" size={18} />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </Card>
-            </div>
             </div>
           )}
 

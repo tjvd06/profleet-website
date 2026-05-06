@@ -11,8 +11,6 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
       <HeroSection
-        badge="Soon Coming"
-        badgeIcon={<Zap size={14} className="text-cyan-400" />}
         title="Neuwagen einkaufen wie die Großen."
         subtitle="Stöbern Sie in Sofort-Angeboten von Händlern oder starten Sie eine Ausschreibung und lassen Sie Händler um Ihren Auftrag bieten."
       >

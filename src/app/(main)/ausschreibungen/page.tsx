@@ -89,8 +89,6 @@ export default function AusschreibungenPage() {
       <ComingSoonOverlay />
       {/* ─── Hero ─────────────────────────────────────────────────────── */}
       <HeroSection
-        badge="Live-Ausschreibungen"
-        badgeIcon={<Gavel size={14} />}
         title={<>Aktive Ausschreibungen{" "}<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">auf einen Blick</span></>}
         subtitle="Geschäftskunden suchen die besten Konditionen für ihre Flotte. Geben Sie Angebote ab und gewinnen Sie neue Kunden."
       >
