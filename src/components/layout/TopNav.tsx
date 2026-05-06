@@ -21,12 +21,6 @@ export function TopNav() {
 
         <div className="flex items-center gap-4">
           <a
-            href={`${APP_URL}/anmelden`}
-            className="text-sm font-medium text-slate-600 hover:text-navy-950 transition-colors"
-          >
-            Anmelden
-          </a>
-          <a
             href={`${APP_URL}/registrieren`}
             className="rounded-xl bg-gradient-to-r from-blue-500 to-cyan-400 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90 transition-opacity"
           >

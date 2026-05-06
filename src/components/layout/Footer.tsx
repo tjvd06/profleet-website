@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "";
+
 export function Footer() {
   return (
     <footer className="bg-navy-950 text-slate-400 py-16 text-sm">
@@ -33,8 +35,11 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="pt-8 border-t border-white/10 text-center">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>© 2026 proFleet GmbH. Alle Rechte vorbehalten.</p>
+          <a href={`${APP_URL}/anmelden`} className="text-slate-500 hover:text-slate-300 transition-colors text-xs">
+            Anmelden
+          </a>
         </div>
       </div>
     </footer>
