@@ -40,7 +40,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="#" className="hover:text-white transition-colors">AGB</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Datenschutz</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Impressum</Link></li>
+              <li><Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Cookie-Einstellungen</Link></li>
             </ul>
           </div>
