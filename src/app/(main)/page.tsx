@@ -173,7 +173,7 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-6xl font-black text-navy-950 mb-6 tracking-tight">
             Launch im{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
-              April 2027
+              Herbst 2026
             </span>
           </h2>
           <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto">
