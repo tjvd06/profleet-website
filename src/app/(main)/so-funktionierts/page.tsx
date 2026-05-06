@@ -60,7 +60,7 @@ const dealerSteps = [
   {
     icon: <MessageCircle size={32} className="text-navy-900" />,
     title: "4. Kundenkontakt",
-    description: "Entscheidet sich der Interessent für Ihr Angebot, erhalten Sie die Kontaktdaten. Nur bei erfolgreicher Vermittlung wird eine Gebühr von 30\u00A0€ fällig."
+    description: "Entscheidet sich der Interessent für Ihr Angebot, erhalten Sie die Kontaktdaten und können direkt mit der Verhandlung beginnen."
   },
   {
     icon: <CarFront size={32} className="text-navy-900" />,
@@ -202,21 +202,6 @@ export default function HowItWorksPage() {
                         <h3 className="text-2xl font-black text-navy-950 mb-3">{step.title}</h3>
                         <p className="text-slate-500 leading-relaxed font-medium">{step.description}</p>
 
-                        {/* Cost hint on step 4 */}
-                        {idx === 3 && (
-                          <div className="mt-6 p-4 bg-emerald-50 text-emerald-800 rounded-2xl font-bold flex items-center gap-3 border border-emerald-100 text-sm">
-                            <CheckCircle2 size={18} className="text-emerald-500" />
-                            Kosten fallen nur bei erfolgreicher Vermittlung (30€) an.
-                          </div>
-                        )}
-
-                        {/* Sofort-Angebote explainer on step 5 */}
-                        {idx === 4 && (
-                          <div className="mt-6 p-4 bg-blue-50 text-blue-800 rounded-2xl font-bold flex items-center gap-3 border border-blue-100 text-sm">
-                            <Package size={18} className="text-blue-500" />
-                            Je nach Abo bis zu unbegrenzt viele Inserate gleichzeitig aktiv.
-                          </div>
-                        )}
                       </Card>
                     </div>
                     <div className="hidden md:block w-1/2" />
