@@ -106,7 +106,7 @@ export default function AusschreibungenPage() {
               <ShieldCheck size={18} className="text-green-400" />
               <span className="text-sm font-bold text-green-400">Verifiziert</span>
             </div>
-            <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-0.5">Alle Nachfrager</div>
+            <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-0.5">Alle Unternehmen</div>
           </div>
         </div>
       </HeroSection>
@@ -227,7 +227,7 @@ export default function AusschreibungenPage() {
                     <ShieldCheck size={20} className="text-blue-600" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-navy-950">Verifizierte Nachfrager</div>
+                    <div className="text-sm font-bold text-navy-950">Verifizierte Unternehmen</div>
                     <div className="text-xs text-slate-500">Nur geprüfte Geschäftskunden</div>
                   </div>
                 </div>

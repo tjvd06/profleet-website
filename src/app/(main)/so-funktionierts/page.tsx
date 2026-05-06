@@ -93,7 +93,7 @@ export default function HowItWorksPage() {
                     : "text-slate-500 hover:text-slate-700 scale-[0.98]"
                 }`}
               >
-                Für Nachfrager
+                Für Unternehmen
               </button>
               <button
                 onClick={() => setActiveTab("dealer")}

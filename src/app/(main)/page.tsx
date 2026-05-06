@@ -202,7 +202,7 @@ export default function HomePage() {
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-navy-900">Ist proFleet wirklich kostenlos?</AccordionTrigger>
               <AccordionContent className="text-slate-600">
-                Ja, für Nachfrager (Käufer) ist die Nutzung von proFleet komplett kostenlos. Wir finanzieren uns auf Händlerseite — Sie als Käufer zahlen weder Anmeldegebühr noch Provision.
+                Ja, für Unternehmen (Käufer) ist die Nutzung von proFleet komplett kostenlos. Wir finanzieren uns auf Händlerseite — Sie als Käufer zahlen weder Anmeldegebühr noch Provision.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
