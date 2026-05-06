@@ -12,7 +12,7 @@ export default function HomePage() {
       {/* 1. Hero Section */}
       <HeroSection
         title="Neuwagen einkaufen wie die Großen."
-        subtitle="Stöbern Sie in Sofort-Angeboten von Händlern oder starten Sie eine Ausschreibung und lassen Sie Händler um Ihren Auftrag bieten."
+        subtitle="Schreiben Sie Ihren Fuhrparkbedarf bundesweit aus oder sichern Sie sich sofort verfügbare Fahrzeuge zu Bestpreisen."
       >
         <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-slate-400 text-sm font-medium">
           <span className="flex items-center gap-2"><CheckCircle2 size={18} className="text-green-400" /> Kostenlos für Unternehmen</span>
