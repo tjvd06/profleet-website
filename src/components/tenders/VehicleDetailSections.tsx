@@ -177,7 +177,7 @@ export function VehicleDetailSections({
             <FileDown size={20} className="text-amber-600 shrink-0" />
             <div>
               <p className="font-semibold text-amber-800 text-sm">Detaillierte Konfiguration als Datei hochgeladen</p>
-              <p className="text-amber-600 text-xs mt-0.5">Die Konfigurationsdatei wurde vom Nachfrager bereitgestellt.</p>
+              <p className="text-amber-600 text-xs mt-0.5">Die Konfigurationsdatei wurde vom Unternehmen bereitgestellt.</p>
             </div>
           </div>
         )}
