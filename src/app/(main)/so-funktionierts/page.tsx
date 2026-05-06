@@ -301,20 +301,7 @@ export default function HowItWorksPage() {
               </Card>
             </div>
 
-            <div className="mt-12 max-w-3xl mx-auto text-center">
-              <h3 className="text-3xl md:text-4xl font-black text-navy-950 mb-6">Preismodell</h3>
-              <p className="text-lg text-slate-500 font-medium mb-10">
-                Das endgültige Preismodell legen wir gemeinsam mit unseren Pilotpartnern fest und kommunizieren es vor dem Launch. Wer sich jetzt vorregistriert, sichert sich attraktive Early-Access-Konditionen.
-              </p>
-
-              <div className="flex justify-center">
-                <Link href="/fuer-haendler">
-                  <Button size="lg" className="bg-navy-950 hover:bg-navy-900 text-white font-bold h-14 px-10 rounded-2xl w-full sm:w-auto shadow-lg shadow-navy-900/25">
-                    Mehr Details zur Anbieter-Registrierung
-                  </Button>
-                </Link>
-              </div>
-            </div>
+            
 
             </div>
           )}
