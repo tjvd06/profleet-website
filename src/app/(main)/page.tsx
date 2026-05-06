@@ -16,7 +16,7 @@ export default function HomePage() {
       >
         <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-slate-400 text-sm font-medium">
           <span className="flex items-center gap-2"><CheckCircle2 size={18} className="text-green-400" /> Kostenlos für Unternehmen</span>
-          <span className="flex items-center gap-2"><CheckCircle2 size={18} className="text-green-400" /> Nur verifizierte User</span>
+          <span className="flex items-center gap-2"><CheckCircle2 size={18} className="text-green-400" /> Nur verifizierte Unternehmen & Händler</span>
           <span className="flex items-center gap-2"><CheckCircle2 size={18} className="text-green-400" /> Reine B2B Plattform</span>
         </div>
       </HeroSection>
