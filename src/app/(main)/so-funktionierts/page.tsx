@@ -79,7 +79,7 @@ export default function HowItWorksPage() {
         subtitle="Von der Konfiguration bis zum abgeschlossenen Vertrag — oder direkt zum verfügbaren Fahrzeug. Entdecken Sie den perfekten Ablauf für Einkäufer und Händler."
       />
 
-      <div className="container mx-auto max-w-5xl px-4 md:px-8 pt-12">
+      <div className="container mx-auto max-w-5xl px-4 md:px-8 pt-12 pb-24">
 
         {/* Tabs */}
         <div className="w-full">

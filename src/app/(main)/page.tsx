@@ -166,17 +166,19 @@ export default function HomePage() {
         <div className="absolute right-0 top-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-600/20 to-transparent blur-3xl" />
         <div className="container mx-auto max-w-7xl px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2 text-left">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Sie sind Händler, Leasingfirma oder Bank?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Sie sind Händler oder Leasingfirma?</h2>
             <p className="text-xl text-blue-100 mb-8 max-w-lg leading-relaxed">
               Erreichen Sie kaufbereite Geschäftskunden aus ganz Deutschland.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-navy-900 hover:bg-slate-100 text-lg h-14 px-8 rounded-xl font-bold shadow-lg">
-                Als Anbieter registrieren
-              </Button>
+              <Link href={`${APP_URL}/registrieren`}>
+                <Button size="lg" className="bg-white text-navy-900 hover:bg-slate-100 text-lg h-14 px-8 rounded-xl font-bold shadow-lg">
+                  Als Händler vorregistrieren
+                </Button>
+              </Link>
             </div>
             <ul className="mt-8 space-y-3 text-blue-200">
-              <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-cyan-400" /> Einfaches Abomodell, keine versteckten Kosten</li>
+              <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-cyan-400" /> Keine versteckten Kosten</li>
               <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-cyan-400" /> Bundesweite Reichweite</li>
               <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-cyan-400" /> Nur verifizierte Unternehmen</li>
             </ul>
