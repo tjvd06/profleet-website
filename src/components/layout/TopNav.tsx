@@ -15,8 +15,6 @@ export function TopNav() {
           <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
             <Link href="/" className="hover:text-blue-500 transition-colors">Startseite</Link>
             <Link href="/so-funktionierts" className="hover:text-blue-500 transition-colors">So funktioniert's</Link>
-            <Link href="/ausschreibungen" className="hover:text-blue-500 transition-colors">Ausschreibungen</Link>
-            <Link href="/sofort-angebote" className="hover:text-blue-500 transition-colors">Sofort-Angebote</Link>
             <Link href="/fuer-haendler" className="hover:text-blue-500 transition-colors">Für Händler</Link>
           </nav>
         </div>

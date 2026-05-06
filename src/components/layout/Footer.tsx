@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-navy-950 text-slate-400 py-16 text-sm">
       <div className="container mx-auto max-w-7xl px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Column 1 */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -18,23 +18,11 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Plattform</h3>
             <ul className="space-y-3">
-              <li><Link href="/ausschreibungen" className="hover:text-white transition-colors">Ausschreibungen</Link></li>
-              <li><Link href="/sofort-angebote" className="hover:text-white transition-colors">Sofort-Angebote</Link></li>
               <li><Link href="/so-funktionierts" className="hover:text-white transition-colors">Für Nachfrager</Link></li>
               <li><Link href="/fuer-haendler" className="hover:text-white transition-colors">Für Händler</Link></li>
             </ul>
           </div>
           {/* Column 3 */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Unternehmen</h3>
-            <ul className="space-y-3">
-              <li><Link href="#" className="hover:text-white transition-colors">Über uns</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Presse</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Karriere</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Kontakt</Link></li>
-            </ul>
-          </div>
-          {/* Column 4 */}
           <div>
             <h3 className="text-white font-semibold mb-4">Rechtliches</h3>
             <ul className="space-y-3">
