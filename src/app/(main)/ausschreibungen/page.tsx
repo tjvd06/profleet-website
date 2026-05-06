@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase";
 import { useAuth } from "@/components/providers/auth-provider";
+import { APP_URL } from "@/lib/site";
 
 const PUBLIC_LIMIT = 10;
 
@@ -203,12 +204,12 @@ export default function AusschreibungenPage() {
                     Registrieren Sie sich als Händler, um alle aktiven Ausschreibungen zu sehen und Angebote abzugeben.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Link href="/registrieren">
+                    <Link href={`${APP_URL}/registrieren`}>
                       <Button className="h-13 px-8 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-bold text-base shadow-lg shadow-blue-600/20">
                         <UserPlus size={18} className="mr-2" /> Kostenlos registrieren
                       </Button>
                     </Link>
-                    <Link href="/anmelden">
+                    <Link href={`${APP_URL}/anmelden`}>
                       <Button variant="outline" className="h-13 px-8 rounded-xl border-white/20 text-white hover:bg-white/10 font-bold text-base backdrop-blur-sm">
                         <LogIn size={18} className="mr-2" /> Anmelden
                       </Button>

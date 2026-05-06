@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { VehicleDetailSections } from "@/components/tenders/VehicleDetailSections";
 import { dbRowToVehicleConfig } from "@/types/vehicle";
+import { APP_URL } from "@/lib/site";
 
 interface PublicTenderCardProps {
   id: string;
@@ -162,7 +163,7 @@ export function PublicTenderCard({ id, endAt, location, requestedTypes, fleetDis
 
           {/* CTA */}
           <div className="mt-auto pt-2">
-            <Link href="/registrieren">
+            <Link href={`${APP_URL}/registrieren`}>
               <Button className="w-full h-16 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-black text-lg shadow-lg shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
                 Angebot abgeben
                 <ArrowRight size={18} className="ml-2" />

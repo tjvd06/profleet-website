@@ -43,6 +43,7 @@ import { useSubscription } from "@/components/providers/subscription-provider";
 import { HeroSection } from "@/components/ui-custom/HeroSection";
 import { type InstantOfferRow } from "@/lib/instant-offers";
 import { EXTERIOR_COLOR_OPTIONS } from "@/lib/vehicle-options";
+import { APP_URL } from "@/lib/site";
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
@@ -804,7 +805,7 @@ export function InstantOfferMarketplace() {
       .maybeSingle();
 
     if (existing) {
-      router.push(`/dashboard/nachrichten?contact=${existing.id}`);
+      window.location.href = `${APP_URL}/dashboard/nachrichten?contact=${existing.id}`;
       return;
     }
 
@@ -821,13 +822,13 @@ export function InstantOfferMarketplace() {
     if (error) {
       toast.error("Fehler: " + error.message);
     } else if (data) {
-      router.push(`/dashboard/nachrichten?contact=${data.id}`);
+      window.location.href = `${APP_URL}/dashboard/nachrichten?contact=${data.id}`;
     }
   };
 
   const handleCreateClick = () => {
     if (canCreateInstantOffer()) {
-      router.push("/dashboard/sofort-angebote/neu");
+      window.location.href = `${APP_URL}/dashboard/sofort-angebote/neu`;
     } else {
       setShowUpgradeDialog(true);
     }
@@ -1889,7 +1890,7 @@ export function InstantOfferMarketplace() {
                       kontaktieren.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                      <Link href="/registrieren">
+                      <Link href={`${APP_URL}/registrieren`}>
                         <Button
                           className="h-12 px-8 rounded-xl font-bold text-white shadow-lg shadow-blue-500/20 text-base"
                           style={{
@@ -1901,7 +1902,7 @@ export function InstantOfferMarketplace() {
                           registrieren
                         </Button>
                       </Link>
-                      <Link href="/anmelden">
+                      <Link href={`${APP_URL}/anmelden`}>
                         <Button
                           variant="ghost"
                           className="h-12 px-8 rounded-xl font-bold text-slate-700 hover:text-navy-950 text-base border border-slate-200"
@@ -1976,7 +1977,7 @@ export function InstantOfferMarketplace() {
             >
               Zurück
             </Button>
-            <Link href="/dashboard/abo">
+            <Link href={`${APP_URL}/dashboard/abo`}>
               <Button
                 className="rounded-xl font-bold text-white w-full sm:w-auto"
                 style={{

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { HeroSection } from "@/components/ui-custom/HeroSection";
+import { APP_URL } from "@/lib/site";
 
 const buyerSteps = [
   {
@@ -206,7 +207,7 @@ export default function HowItWorksPage() {
                     </li>
                   </ul>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href="/registrieren">
+                    <Link href={`${APP_URL}/registrieren`}>
                       <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold h-14 px-8 rounded-2xl w-full sm:w-auto shadow-lg shadow-blue-500/25">
                         Jetzt kostenlos registrieren <ArrowRight className="ml-2" size={18} />
                       </Button>

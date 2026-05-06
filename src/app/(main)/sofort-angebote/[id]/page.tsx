@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { createClient } from "@/lib/supabase";
 import { useAuth } from "@/components/providers/auth-provider";
+import { APP_URL } from "@/lib/site";
 import { toast } from "sonner";
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle,
@@ -134,7 +135,7 @@ export default function InstantOfferDetailPage() {
       .maybeSingle();
 
     if (existing) {
-      router.push(`/dashboard/nachrichten?contact=${existing.id}`);
+      window.location.href = `${APP_URL}/dashboard/nachrichten?contact=${existing.id}`;
       return;
     }
 
@@ -152,7 +153,7 @@ export default function InstantOfferDetailPage() {
       toast.error("Fehler: " + error.message);
       setContactLoading(false);
     } else if (data) {
-      router.push(`/dashboard/nachrichten?contact=${data.id}`);
+      window.location.href = `${APP_URL}/dashboard/nachrichten?contact=${data.id}`;
     }
     setShowContactConfirm(false);
   };
@@ -698,7 +699,7 @@ export default function InstantOfferDetailPage() {
               {user && isBuyer && (
                 existingContactId ? (
                   <Button
-                    onClick={() => router.push(`/dashboard/nachrichten?contact=${existingContactId}`)}
+                    onClick={() => { window.location.href = `${APP_URL}/dashboard/nachrichten?contact=${existingContactId}`; }}
                     className="w-full h-14 rounded-2xl bg-green-600 hover:bg-green-700 text-white font-bold text-lg shadow-lg shadow-green-600/20"
                   >
                     <MessageCircle size={18} className="mr-2" />

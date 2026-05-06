@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge } from "@/components/ui/badge";
 import { HeroSection } from "@/components/ui-custom/HeroSection";
 import { ArrowRight, CheckCircle2, Clock, Gavel, Package, Search, ShieldCheck, ShoppingCart, Star, TrendingDown, Users, Zap } from "lucide-react";
+import { APP_URL } from "@/lib/site";
 
 const mockSavings = [
   { brand: 'Audi', model: 'A4 Avant RS4', specs: '420 PS · shadowgrey metallic', listPrice: 89138, finalPrice: 75411, savings: 15.4, dealerRating: 0, location: 'München · 100 km' },
@@ -29,7 +30,7 @@ export default function HomePage() {
               Sofort-Angebote entdecken
             </Button>
           </Link>
-          <Link href="/dashboard/ausschreibung/neu">
+          <Link href={`${APP_URL}/dashboard/ausschreibung/neu`}>
             <Button size="lg" className="rounded-xl bg-gradient-to-r from-blue-500 to-cyan-400 hover:opacity-90 text-white font-semibold px-8 h-14 text-lg w-full">
               <Gavel size={20} className="mr-2" />
               Ausschreibung starten
@@ -95,7 +96,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <Link href="/dashboard/ausschreibung/neu">
+              <Link href={`${APP_URL}/dashboard/ausschreibung/neu`}>
                 <Button size="lg" className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-semibold h-14 text-lg">
                   Ausschreibung starten <ArrowRight size={18} className="ml-2" />
                 </Button>
