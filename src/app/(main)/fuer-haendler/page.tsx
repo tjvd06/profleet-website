@@ -31,25 +31,6 @@ export default function ForDealersLandingPage() {
           </Button>
         </div>
 
-        {/* Hero Sub-Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-12 w-full max-w-4xl text-left">
-          <div>
-            <div className="text-3xl font-black text-white mb-1">10.000+</div>
-            <div className="text-sm text-blue-200/70 font-bold uppercase tracking-widest">Kombinierte Leads/Monat</div>
-          </div>
-          <div>
-            <div className="text-3xl font-black text-white mb-1">~ 12h</div>
-            <div className="text-sm text-blue-200/70 font-bold uppercase tracking-widest">Ø Zeit für Gegengebot</div>
-          </div>
-          <div>
-            <div className="text-3xl font-black text-emerald-400 mb-1">0 €</div>
-            <div className="text-sm text-blue-200/70 font-bold uppercase tracking-widest">Starter kostenlos</div>
-          </div>
-          <div>
-            <div className="text-3xl font-black text-white mb-1">98%</div>
-            <div className="text-sm text-blue-200/70 font-bold uppercase tracking-widest">Händler Zufriedenheit</div>
-          </div>
-        </div>
       </HeroSection>
 
       {/* 2. ADVANTAGES FEATURE GRID */}
@@ -102,67 +83,7 @@ export default function ForDealersLandingPage() {
         </div>
       </section>
 
-      {/* 3. TESTIMONIALS */}
-      <section className="py-24 bg-white border-y border-slate-100">
-        <div className="container mx-auto max-w-6xl px-4 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-navy-950 mb-4">Das sagen unsere Partner</h2>
-            <p className="text-lg text-slate-500 font-medium">Referenzen, die für sich sprechen.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8 rounded-3xl border-slate-200 bg-slate-50">
-              <div className="flex text-amber-400 mb-6">
-                {[1,2,3,4,5].map(i => <Star key={i} size={20} fill="currentColor" />)}
-              </div>
-              <p className="text-navy-950 font-medium italic mb-8 leading-relaxed">
-                "Dank proFleet konnten wir unseren B2B Leasing Absatz im letzten Quartal um 40% verdoppeln. Der Aufwand pro Pitch hat sich massiv reduziert."
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-slate-300 rounded-full flex items-center justify-center font-bold text-white">MK</div>
-                <div>
-                  <div className="font-bold text-navy-950">Max Krüger</div>
-                  <div className="text-sm text-slate-500">Fleet Manager, Autozentrum Krüger</div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-8 rounded-3xl border-slate-200 bg-slate-50">
-              <div className="flex text-amber-400 mb-6">
-                {[1,2,3,4,5].map(i => <Star key={i} size={20} fill="currentColor" />)}
-              </div>
-              <p className="text-navy-950 font-medium italic mb-8 leading-relaxed">
-                "Das Abo-Modell ist super fair und transparent. Besonders die Qualitaet der Anfragen ist immens hoch — das Pro-Abo hat sich fuer uns sofort gelohnt."
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center font-bold text-white">SW</div>
-                <div>
-                  <div className="font-bold text-navy-950">Sarah Weber</div>
-                  <div className="text-sm text-slate-500">Vertriebsleitung, Audi Zentrum Süd</div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-8 rounded-3xl border-slate-200 bg-slate-50">
-              <div className="flex text-amber-400 mb-6">
-                {[1,2,3,4,5].map(i => <Star key={i} size={20} fill="currentColor" />)}
-              </div>
-              <p className="text-navy-950 font-medium italic mb-8 leading-relaxed">
-                "Das Sofort-Angebote Feature hilft uns enorm, unsere Tageszulassungen schnell an Gewerbetreibende deutschlandweit loszuwerden."
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center font-bold text-white">LM</div>
-                <div>
-                  <div className="font-bold text-navy-950">Lukas Meyer</div>
-                  <div className="text-sm text-slate-500">Inhaber, Auto Meyer GmbH</div>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. FAQ SECTION */}
+      {/* 3. FAQ SECTION */}
       <section className="py-24 container mx-auto max-w-3xl px-4 md:px-8">
         <div className="text-center mb-16">
           <Badge className="bg-slate-200 text-slate-600 border-none font-bold mb-4">FAQ</Badge>

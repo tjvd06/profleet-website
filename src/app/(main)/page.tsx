@@ -1,17 +1,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { VehicleCard } from "@/components/tenders/VehicleCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { HeroSection } from "@/components/ui-custom/HeroSection";
-import { ArrowRight, CheckCircle2, Clock, Gavel, Package, Search, ShieldCheck, ShoppingCart, Star, TrendingDown, Users, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Gavel, Package, Search, ShieldCheck, ShoppingCart, TrendingDown, Users, Zap } from "lucide-react";
 import { APP_URL } from "@/lib/site";
-
-const mockSavings = [
-  { brand: 'Audi', model: 'A4 Avant RS4', specs: '420 PS · shadowgrey metallic', listPrice: 89138, finalPrice: 75411, savings: 15.4, dealerRating: 0, location: 'München · 100 km' },
-  { brand: 'BMW', model: '530d xDrive', specs: '286 PS · saphirschwarz', listPrice: 75200, finalPrice: 63920, savings: 15.0, leasing: 499, dealerRating: 0, location: 'Berlin · 50 km' },
-  { brand: 'Mercedes-Benz', model: 'C 300 e T-Modell', specs: '313 PS · hightechsilber', listPrice: 62500, finalPrice: 53125, savings: 15.0, dealerRating: 0, location: 'Hamburg · 20 km' },
-];
 
 export default function HomePage() {
   return (
@@ -81,8 +74,8 @@ export default function HomePage() {
                     <Users size={16} />
                   </div>
                   <div>
-                    <p className="font-semibold text-navy-950">Mehrere Angebote</p>
-                    <p className="text-sm text-slate-500">Durchschnittlich 5+ Händler bieten pro Ausschreibung</p>
+                    <p className="font-semibold text-navy-950">Wettbewerb statt Einzelpreis</p>
+                    <p className="text-sm text-slate-500">Mehrere Händler im direkten Vergleich</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -170,33 +163,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Aktuelle Ersparnisse */}
-      <section className="bg-slate-50 py-24">
-        <div className="container mx-auto max-w-7xl px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-navy-950 mb-4">Aktuelle Ersparnisse auf proFleet <Badge className="bg-amber-100 text-amber-700 hover:bg-amber-200 border-none text-xs ml-2 align-middle">Demo-Daten</Badge></h2>
-              <p className="text-lg text-slate-500">Das haben andere Unternehmen in den letzten 48 Stunden gespart.</p>
-            </div>
-            <Link href="/ausschreibungen" className="hidden md:flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-              Alle Ergebnisse ansehen <ArrowRight size={16} className="ml-1" />
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {mockSavings.map((data, i) => (
-              <VehicleCard key={i} {...data} />
-            ))}
-          </div>
-
-          <div className="mt-8 text-center md:hidden">
-            <Button variant="outline" className="w-full">
-              Alle Ergebnisse ansehen
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* 5. Für Händler CTA */}
       <section className="relative bg-navy-900 py-24 overflow-hidden">
         <div className="absolute right-0 top-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-600/20 to-transparent blur-3xl" />
@@ -230,42 +196,7 @@ export default function HomePage() {
       </section>
 
 
-      {/* 6. Erfahrungsberichte */}
-      <section className="bg-slate-50 py-24">
-        <div className="container mx-auto max-w-7xl px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-navy-950 mb-16">Erfahrungsberichte <Badge className="bg-amber-100 text-amber-700 hover:bg-amber-200 border-none text-xs ml-2 align-middle">Demo-Daten</Badge></h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-left">
-              <div className="flex gap-1 mb-6 text-amber-500">
-                <Star className="fill-current" /> <Star className="fill-current" /> <Star className="fill-current" /> <Star className="fill-current" /> <Star className="fill-current" />
-              </div>
-              <p className="text-xl font-medium text-navy-900 mb-8 italic">"Wir haben für unsere neue Flotte von 5 VW Passats eine Ausschreibung gestartet. Am Ende haben wir uns für einen Händler aus 200km Entfernung entschieden, der 18% günstiger war als unser Hausdeal."</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold">MS</div>
-                <div>
-                  <h4 className="font-bold text-navy-950">Michael S.</h4>
-                  <p className="text-sm text-slate-500">Geschäftsführer, IT-Systemhaus</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-left">
-              <div className="flex gap-1 mb-6 text-amber-500">
-                <Star className="fill-current" /> <Star className="fill-current" /> <Star className="fill-current" /> <Star className="fill-current" /> <Star className="fill-current" />
-              </div>
-              <p className="text-xl font-medium text-navy-900 mb-8 italic">"Der Prozess ist sensationell einfach. Die vollständige Transparenz gibt uns das Gefühl, wirklich fundierte Entscheidungen treffen zu können."</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center text-cyan-700 font-bold">JW</div>
-                <div>
-                  <h4 className="font-bold text-navy-950">Julia W.</h4>
-                  <p className="text-sm text-slate-500">Fuhrparkmanagerin</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. FAQ */}
+      {/* 6. FAQ */}
       <section className="bg-white py-24">
         <div className="container mx-auto max-w-3xl px-4">
           <h2 className="text-3xl md:text-5xl font-bold text-navy-950 mb-12 text-center">Häufige Fragen</h2>
@@ -273,7 +204,7 @@ export default function HomePage() {
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-navy-900">Ist proFleet wirklich kostenlos?</AccordionTrigger>
               <AccordionContent className="text-slate-600">
-                Ja, für Nachfrager (Käufer) ist die Nutzung von proFleet komplett kostenlos. Wir finanzieren uns über eine kleine Pauschale, die Händler bei erfolgreicher Kontaktvermittlung zahlen.
+                Ja, für Nachfrager (Käufer) ist die Nutzung von proFleet komplett kostenlos. Wir finanzieren uns über ein Abo-Modell auf Händlerseite — Sie als Käufer zahlen nichts.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -285,7 +216,7 @@ export default function HomePage() {
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-lg font-semibold text-navy-900">Welche Händler nehmen teil?</AccordionTrigger>
               <AccordionContent className="text-slate-600">
-                Auf proFleet sind deutschlandweit über 2.500 verifizierte Vertragshändler, namhafte Autohäuser, Leasinggesellschaften und Banken registriert.
+                Auf proFleet richten wir uns an deutschlandweit verifizierte Vertragshändler, Autohäuser, Leasinggesellschaften und Banken. Jedes Unternehmen wird vor Freischaltung geprüft.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
