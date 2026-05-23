@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config = {
-  darkMode: ["class"],
+  darkMode: ["selector", '[data-theme="dark"]'],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -52,6 +52,21 @@ const config = {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
+        brand: {
+          deep: "var(--brand-deep)",
+          1: "var(--brand-1)",
+          2: "var(--brand-2)",
+          3: "var(--brand-3)",
+        },
+        fg: {
+          DEFAULT: "var(--fg)",
+          soft: "var(--fg-soft)",
+          mute: "var(--fg-mute)",
+        },
+        line: {
+          DEFAULT: "var(--line)",
+          strong: "var(--line-strong)",
+        },
         navy: {
           950: '#030B1A',
           900: '#0A1E3D',
@@ -59,10 +74,20 @@ const config = {
           700: '#163D7A',
         },
       },
+      fontFamily: {
+        display: ["var(--font-display)", "Geist", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "Inter", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "JetBrains Mono", "ui-monospace", "monospace"],
+        sans: ["var(--font-body)", "Inter", "system-ui", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "pf-sm": "var(--radius-sm)",
+        "pf-md": "var(--radius)",
+        "pf-lg": "var(--radius-lg)",
+        "pf-xl": "var(--radius-xl)",
       },
       keyframes: {
         "accordion-down": {
@@ -73,10 +98,37 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        drift: {
+          "0%": { transform: "translate(0, 0) scale(1)" },
+          "100%": { transform: "translate(40px, -30px) scale(1.1)" },
+        },
+        "pf-pulse": {
+          "0%, 100%": { boxShadow: "0 0 0 3px oklch(0.65 0.18 145 / 0.25)" },
+          "50%": { boxShadow: "0 0 0 8px oklch(0.65 0.18 145 / 0)" },
+        },
+        shimmer: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        floatUp: {
+          "0%": { transform: "rotateX(8deg) rotateY(-4deg) translateY(0)" },
+          "100%": { transform: "rotateX(8deg) rotateY(-4deg) translateY(-10px)" },
+        },
+        spin: { to: { transform: "rotate(360deg)" } },
+        revealUp: {
+          from: { opacity: "0", transform: "translateY(18px)" },
+          to: { opacity: "1", transform: "none" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        drift: "drift 18s ease-in-out infinite alternate",
+        "pf-pulse": "pf-pulse 2.4s ease-in-out infinite",
+        shimmer: "shimmer 6s ease-in-out infinite",
+        floatUp: "floatUp 5s ease-in-out infinite alternate",
+        spin: "spin 30s linear infinite",
+        revealUp: "revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },

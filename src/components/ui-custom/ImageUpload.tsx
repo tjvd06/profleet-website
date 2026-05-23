@@ -180,7 +180,7 @@ export function ImageUpload({ images, onChange }: ImageUploadProps) {
             Bilder hierher ziehen oder klicken
           </p>
           <p className="text-xs text-slate-400">
-            JPG, PNG, WebP, HEIC, GIF — max. {MAX_IMAGES - images.length} weitere
+            JPG, PNG, WebP, HEIC, GIF · max. {MAX_IMAGES - images.length} weitere
           </p>
           <input
             ref={fileInputRef}

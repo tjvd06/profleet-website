@@ -46,7 +46,7 @@ export function RangeSliderInput({
           />
           {unit && <span className="text-xs text-slate-400">{unit}</span>}
         </div>
-        <div className="flex-1 text-center text-slate-300 text-sm">—</div>
+        <div className="flex-1 text-center text-slate-300 text-sm">bis</div>
         <div className="flex items-center gap-1.5">
           <input
             type="number"

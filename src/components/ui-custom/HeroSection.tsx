@@ -11,7 +11,6 @@ interface HeroSectionProps {
 export function HeroSection({ badge, badgeIcon, title, subtitle, children }: HeroSectionProps) {
   return (
     <section className="relative bg-gradient-to-br from-navy-950 via-navy-900 to-blue-900 text-white pt-20 pb-24 overflow-hidden px-4 md:px-8">
-      {/* Background decorations */}
       <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 pointer-events-none" />
 

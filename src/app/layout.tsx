@@ -1,17 +1,43 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 import { AuthProvider } from "@/components/providers/auth-provider";
 import { SubscriptionProvider } from "@/components/providers/subscription-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { LanguageProvider } from "@/components/providers/language-provider";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const display = Inter_Tight({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-body",
+});
+
+const jbm = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   title: "proFleet",
   description: "Fahrzeugausschreibungen für Unternehmen",
 };
+
+const FOUC_SCRIPT = `(function(){
+  try {
+    var t = localStorage.getItem("pf-theme") || "light";
+    document.documentElement.dataset.theme = t;
+    var l = localStorage.getItem("pf-lang") || "de";
+    document.documentElement.lang = l;
+  } catch(e) {}
+})();`;
 
 export default function RootLayout({
   children,
@@ -19,14 +45,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", inter.variable)}>
+    <html lang="de" suppressHydrationWarning className={`${display.variable} ${inter.variable} ${jbm.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: FOUC_SCRIPT }} />
+      </head>
       <body className="antialiased">
-        <AuthProvider>
-          <SubscriptionProvider>
-            {children}
-            <Toaster richColors position="top-right" />
-          </SubscriptionProvider>
-        </AuthProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <AuthProvider>
+              <SubscriptionProvider>
+                {children}
+                <Toaster richColors position="top-right" />
+              </SubscriptionProvider>
+            </AuthProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

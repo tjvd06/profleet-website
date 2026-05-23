@@ -44,7 +44,7 @@ export default function ImpressumPage() {
           <section>
             <h2 className="text-xl font-bold text-navy-950 mb-3">Bildquellen</h2>
             <p>
-              Adobe Stock —{" "}
+              Adobe Stock:{" "}
               <a
                 href="https://stock.adobe.com/"
                 target="_blank"

@@ -91,7 +91,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       } catch (e) {
         console.error("[AuthProvider] onAuthStateChange handler error:", e);
       } finally {
-        // Always release isLoading — no matter what happens above
+        // Always release isLoading no matter what happens above
         console.log("[AuthProvider] Setting isLoading = false");
         setIsLoading(false);
       }

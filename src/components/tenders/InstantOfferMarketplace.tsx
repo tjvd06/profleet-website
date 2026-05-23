@@ -661,7 +661,7 @@ export function InstantOfferMarketplace() {
             query = query.order("published_at", { ascending: false });
         }
 
-        // Pagination — fetch extra when client-side filters are active
+        // Pagination: fetch extra when client-side filters are active
         const hasClientFilters =
           filters.equipment.length > 0 || !!(filters.plz && filters.radius);
         const fetchSize = !isLoggedIn
@@ -1250,7 +1250,7 @@ export function InstantOfferMarketplace() {
                 placeholder="von"
                 className="h-10 rounded-xl border-slate-200 text-center"
               />
-              <span className="text-slate-300 shrink-0">—</span>
+              <span className="text-slate-300 shrink-0">bis</span>
               <Input
                 type="number"
                 value={draft.powerMax || ""}

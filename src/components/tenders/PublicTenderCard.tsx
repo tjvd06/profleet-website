@@ -88,7 +88,7 @@ export function PublicTenderCard({ id, endAt, location, requestedTypes, fleetDis
                       <div className="min-w-0">
                         <h4 className="font-bold text-navy-950 text-sm leading-tight truncate">
                           {vehicleConfigs.length > 1 && <span className="text-blue-600">#{i + 1} </span>}
-                          {config.brand || "—"} {config.model || ""} {(raw as Record<string, unknown>)?.trim_level ? ` ${(raw as Record<string, unknown>).trim_level}` : ""}
+                          {config.brand || "-"} {config.model || ""} {(raw as Record<string, unknown>)?.trim_level ? ` ${(raw as Record<string, unknown>).trim_level}` : ""}
                         </h4>
                         <div className="flex items-center gap-2 mt-0.5 text-xs text-slate-500">
                           <span className="font-semibold">{config.quantity}x</span>

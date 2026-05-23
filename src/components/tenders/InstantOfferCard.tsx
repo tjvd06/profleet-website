@@ -110,7 +110,7 @@ export function InstantOfferCard({
             </div>
           )}
 
-          {/* Bookmark button — shown for public and buyer */}
+          {/* Bookmark button: shown for public and buyer */}
           {viewMode !== "seller" && (
             <button
               onClick={handleBookmark}

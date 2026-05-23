@@ -84,7 +84,7 @@ export default function InstantOfferDetailPage() {
         const offerData = data as InstantOfferRow;
         setOffer(offerData);
 
-        // Load dealer profile — only for logged-in users
+        // Load dealer profile: only for logged-in users
         if (offerData.dealer_id && user) {
           const { data: dp } = await supabase
             .from("profiles")
@@ -646,7 +646,7 @@ export default function InstantOfferDetailPage() {
               </div>
             </div>
 
-            {/* Dealer Info Card — only for logged-in users */}
+            {/* Dealer Info Card: only for logged-in users */}
             {user ? (
               <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6">
                 <h2 className="text-lg font-bold text-navy-950 mb-4">Anbieter</h2>

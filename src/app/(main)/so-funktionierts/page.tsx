@@ -1,258 +1,143 @@
 "use client";
 
 import { useState } from "react";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  CarFront, FileText, BarChart3, MessageCircle, Star,
-  Settings, Handshake, Zap, ArrowRight, ShieldCheck, CheckCircle2,
-  Search, Package, UserPlus
-} from "lucide-react";
 import Link from "next/link";
-import { HeroSection } from "@/components/ui-custom/HeroSection";
+import { ArrowRight, Check, Zap } from "lucide-react";
+import { useLang } from "@/components/providers/language-provider";
+import { Reveal } from "@/components/ui-custom/Reveal";
 import { APP_URL } from "@/lib/site";
 
-const buyerSteps = [
-  {
-    icon: <Settings size={32} className="text-blue-600" />,
-    title: "1. Konfigurieren",
-    description: "Erstellen Sie Ihr Wunschfahrzeug in unserem detaillierten Online-Konfigurator — passgenau für Ihren Fuhrpark."
-  },
-  {
-    icon: <FileText size={32} className="text-blue-600" />,
-    title: "2. Ausschreibung starten",
-    description: "Nutzen Sie Ihre Konfiguration als Basis für eine Ausschreibung. Bestimmen Sie Volumen, Vertragsart (Kauf/Leasing/Finanzierung) und Lieferort."
-  },
-  {
-    icon: <BarChart3 size={32} className="text-blue-600" />,
-    title: "3. Angebote vergleichen",
-    description: "Lehnen Sie sich zurück. Das System benachrichtigt Händler in Ihrer Region, und Sie erhalten vergleichbare, verbindliche Bestpreis-Angebote."
-  },
-  {
-    icon: <Handshake size={32} className="text-blue-600" />,
-    title: "4. Anfrage senden",
-    description: "Wählen Sie das attraktivste Angebot aus und senden Sie eine Anfrage. Alle Händlerdaten sind bereits sichtbar, sodass Sie fundiert entscheiden können."
-  },
-  {
-    icon: <Star size={32} className="text-blue-600" />,
-    title: "5. Bewerten",
-    description: "Nach erfolgreichem Abschluss bewerten Sie den Händler, um die Plattform transparent und professionell für alle zu halten."
-  }
-];
-
-const dealerSteps = [
-  {
-    icon: <UserPlus size={32} className="text-navy-900" />,
-    title: "1. Profil anlegen",
-    description: "Erstellen Sie Ihr Händlerprofil und durchlaufen Sie unsere Verifikation. Sobald freigeschaltet, können Sie loslegen."
-  },
-  {
-    icon: <Zap size={32} className="text-navy-900" />,
-    title: "2. Ausschreibungen erhalten",
-    description: "Sie werden automatisch über fabrikatsbezogene Anfragen aus Ihrer Region informiert, passend zu Ihrem Profil und Ihren Marken."
-  },
-  {
-    icon: <FileText size={32} className="text-navy-900" />,
-    title: "3. Angebot erstellen",
-    description: "Mit unserem digitalen Wizard kalkulieren Sie in Sekunden Ihr Gegenangebot. Ihr Angebot tritt im Ranking gegen Wettbewerber an."
-  },
-  {
-    icon: <MessageCircle size={32} className="text-navy-900" />,
-    title: "4. Kundenkontakt",
-    description: "Entscheidet sich der Interessent für Ihr Angebot, erhalten Sie die Kontaktdaten und können direkt mit der Verhandlung beginnen."
-  },
-  {
-    icon: <CarFront size={32} className="text-navy-900" />,
-    title: "5. Sofort-Angebote einstellen",
-    description: "Zusätzlich zu Ausschreibungen listen Sie Lagerfahrzeuge, Vorführwagen oder Tageszulassungen direkt auf dem Marktplatz — mit Festpreis, sofort sichtbar für Käufer."
-  }
-];
+type Tab = "buyer" | "dealer";
 
 export default function HowItWorksPage() {
-  const [activeTab, setActiveTab] = useState<"buyer" | "dealer">("buyer");
+  const { t } = useLang();
+  const [tab, setTab] = useState<Tab>("buyer");
+  const steps = tab === "buyer" ? t.how.buyer : t.how.dealer;
+  const accent = tab === "buyer" ? "accent-blue" : "accent-navy";
 
   return (
-    <div className="bg-slate-50 min-h-screen">
-      <HeroSection
-        title="So einfach funktioniert's"
-        subtitle="Von der Konfiguration bis zum abgeschlossenen Vertrag — oder direkt zum verfügbaren Fahrzeug. Entdecken Sie den perfekten Ablauf für Einkäufer und Händler."
-      />
+    <>
+      <section className="hero hero-page">
+        <div className="hero-mesh-wrap" aria-hidden="true">
+          <div className="mesh-blob mesh-blob-1" />
+          <div className="mesh-blob mesh-blob-2" />
+          <div className="mesh-grid" />
+        </div>
+        <div className="hero-inner">
+          <Reveal as="h1" className="hero-title hero-title-page">
+            <span className="hero-line">{t.how.heroTitle[0]}</span>
+          </Reveal>
+          <Reveal as="p" className="hero-sub" delay={100}>
+            {t.how.heroSub}
+          </Reveal>
+        </div>
+        <div className="hero-scrim" aria-hidden="true" />
+      </section>
 
-      <div className="container mx-auto max-w-5xl px-4 md:px-8 pt-12 pb-24">
-
-        {/* Tabs */}
-        <div className="w-full">
-          <div className="flex justify-center mb-16">
-            <div className="flex w-full max-w-md p-1.5 rounded-full bg-slate-200/50 shadow-inner">
+      <section className="pf-section section-tabs">
+        <div className="pf-container">
+          <div className="tabs-wrap">
+            <div className="tabs glass">
+              <span
+                className="tabs-pill"
+                aria-hidden="true"
+                style={{ transform: tab === "dealer" ? "translateX(100%)" : "none" }}
+              />
               <button
-                onClick={() => setActiveTab("buyer")}
-                className={`flex-1 rounded-full py-3 font-bold text-base transition-all duration-300 ${
-                  activeTab === "buyer"
-                    ? "bg-white text-blue-600 shadow-md scale-100"
-                    : "text-slate-500 hover:text-slate-700 scale-[0.98]"
-                }`}
+                type="button"
+                className={`tab ${tab === "buyer" ? "on" : ""}`}
+                onClick={() => setTab("buyer")}
               >
-                Für Unternehmen
+                {t.how.tabBuyer}
               </button>
               <button
-                onClick={() => setActiveTab("dealer")}
-                className={`flex-1 rounded-full py-3 font-bold text-base transition-all duration-300 ${
-                  activeTab === "dealer"
-                    ? "bg-navy-950 text-white shadow-md scale-100"
-                    : "text-slate-500 hover:text-slate-700 scale-[0.98]"
-                }`}
+                type="button"
+                className={`tab ${tab === "dealer" ? "on" : ""}`}
+                onClick={() => setTab("dealer")}
               >
-                Für Händler
+                {t.how.tabDealer}
               </button>
             </div>
           </div>
 
-          {/* ===================== BUYER TAB ===================== */}
-          {activeTab === "buyer" && (
-            <div className="mt-0 animate-in fade-in slide-in-from-bottom-4 duration-500 w-full relative">
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-100 via-blue-200 to-transparent -translate-x-1/2 hidden md:block rounded-full" />
-
-            <div className="space-y-12 md:space-y-24">
-              {buyerSteps.map((step, idx) => {
-                const isEven = idx % 2 !== 0;
-                return (
-                  <div key={idx} className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-16 w-full ${isEven ? 'md:flex-row-reverse' : ''}`}>
-                    {/* Node in center */}
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border-4 border-blue-500 shadow-md hidden md:flex items-center justify-center font-black text-blue-600 z-10">
-                      {idx + 1}
-                    </div>
-
-                    {/* Content Card */}
-                    <div className={`w-full md:w-1/2 flex ${isEven ? 'justify-start md:pl-8' : 'justify-end md:pr-8'}`}>
-                      <Card className="p-8 rounded-3xl border-transparent bg-white shadow-xl shadow-slate-200/40 w-full hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-                        <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
-                          {step.icon}
-                        </div>
-                        <h3 className="text-2xl font-black text-navy-950 mb-3">{step.title}</h3>
-                        <p className="text-slate-500 leading-relaxed font-medium">{step.description}</p>
-                      </Card>
-                    </div>
-                    {/* Empty placeholder for grid balance on desktop */}
-                    <div className="hidden md:block w-1/2" />
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Sofort-Angebote Section for Buyers */}
-            <div className="mt-24 max-w-3xl mx-auto">
-              <Card className="p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-2xl relative overflow-hidden">
-                <div className="absolute -right-16 -top-16 opacity-10 blur-sm pointer-events-none">
-                  <Package size={260} />
+          <div className={`timeline ${accent}`}>
+            <div className="timeline-line" aria-hidden="true" />
+            {steps.map((s, i) => (
+              <div key={`${tab}-${i}`} className={`tl-step ${i % 2 === 0 ? "" : "right"}`}>
+                <div className="tl-node">{String(i + 1).padStart(2, "0")}</div>
+                <div className="tl-card glass">
+                  <div className="tl-num">Step {String(i + 1).padStart(2, "0")}</div>
+                  <h3 className="tl-title">{s.t}</h3>
+                  <p className="tl-desc">{s.d}</p>
                 </div>
-                <div className="relative z-10">
-                  <Badge className="bg-white/20 text-white border-white/20 mb-6 font-bold text-sm">
-                    <Zap size={14} className="mr-1" /> Alternative
-                  </Badge>
-                  <h3 className="text-3xl font-black mb-4">Sofort-Angebote: Direkt verfügbare Fahrzeuge</h3>
-                  <p className="text-blue-100 font-medium leading-relaxed mb-8">
-                    Keine Zeit für eine Ausschreibung? Durchstöbern Sie unseren Marktplatz mit sofort verfügbaren
-                    Lagerfahrzeugen, Vorführwagen und Tageszulassungen — mit transparenten Festpreisen und direkter Kontaktaufnahme zum Händler.
-                  </p>
-                  <ul className="space-y-3 mb-10 text-blue-100">
-                    <li className="flex gap-3 items-start font-medium">
-                      <CheckCircle2 className="text-emerald-300 shrink-0 mt-0.5" size={20} />
-                      Sofort verfügbare Fahrzeuge — keine Wartezeit auf Angebote
-                    </li>
-                    <li className="flex gap-3 items-start font-medium">
-                      <CheckCircle2 className="text-emerald-300 shrink-0 mt-0.5" size={20} />
-                      Feste Preise mit Rabatt gegenüber der UVP — transparent einsehbar
-                    </li>
-                    <li className="flex gap-3 items-start font-medium">
-                      <CheckCircle2 className="text-emerald-300 shrink-0 mt-0.5" size={20} />
-                      Filtern nach Marke, Modell, Ausstattung, Standort und Preis
-                    </li>
-                    <li className="flex gap-3 items-start font-medium">
-                      <CheckCircle2 className="text-emerald-300 shrink-0 mt-0.5" size={20} />
-                      Kauf, Leasing oder Finanzierung — alle Optionen direkt vergleichbar
-                    </li>
-                  </ul>
-                </div>
-              </Card>
+              </div>
+            ))}
+          </div>
+
+          <div className="instant-card-wrap">
+            <div
+              className={`instant-card glass-strong ${
+                tab === "dealer" ? "tinted-dark" : "tinted-blue"
+              }`}
+            >
+              <div className="ic-tag">
+                <Zap size={12} />
+                {tab === "buyer" ? t.how.instant.tagBuyer : t.how.instant.tagDealer}
+              </div>
+              <h3 className="ic-title">
+                {tab === "buyer" ? t.how.instant.titleBuyer : t.how.instant.titleDealer}
+              </h3>
+              <p className="ic-desc">
+                {tab === "buyer" ? t.how.instant.descBuyer : t.how.instant.descDealer}
+              </p>
+              <ul className="ic-bullets">
+                {(tab === "buyer"
+                  ? t.how.instant.bulletsBuyer
+                  : t.how.instant.bulletsDealer
+                ).map((b, i) => (
+                  <li key={i}>
+                    <span className="ic-check">
+                      <Check size={12} />
+                    </span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            </div>
-          )}
-
-          {/* ===================== DEALER TAB ===================== */}
-          {activeTab === "dealer" && (
-            <div className="mt-0 animate-in fade-in slide-in-from-bottom-4 duration-500 w-full relative">
-            <div className="absolute left-1/2 top-0 bottom-[400px] w-1 bg-gradient-to-b from-slate-200 via-slate-300 to-transparent -translate-x-1/2 hidden md:block rounded-full" />
-
-            <div className="space-y-12 md:space-y-24 mb-24">
-              {dealerSteps.map((step, idx) => {
-                const isEven = idx % 2 !== 0;
-                return (
-                  <div key={idx} className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-16 w-full ${isEven ? 'md:flex-row-reverse' : ''}`}>
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border-4 border-navy-950 shadow-md hidden md:flex items-center justify-center font-black text-navy-950 z-10">
-                      {idx + 1}
-                    </div>
-
-                    <div className={`w-full md:w-1/2 flex ${isEven ? 'justify-start md:pl-8' : 'justify-end md:pr-8'}`}>
-                      <Card className="p-8 rounded-3xl border-slate-200 bg-white shadow-xl shadow-slate-200/40 w-full hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-                        <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mb-6">
-                          {step.icon}
-                        </div>
-                        <h3 className="text-2xl font-black text-navy-950 mb-3">{step.title}</h3>
-                        <p className="text-slate-500 leading-relaxed font-medium">{step.description}</p>
-
-                      </Card>
-                    </div>
-                    <div className="hidden md:block w-1/2" />
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Sofort-Angebote Deep Dive for Dealers */}
-            <div className="mt-12 max-w-3xl mx-auto">
-              <Card className="p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-slate-800 to-navy-950 text-white shadow-2xl relative overflow-hidden">
-                <div className="absolute -right-16 -top-16 opacity-10 blur-sm pointer-events-none">
-                  <CarFront size={260} />
-                </div>
-                <div className="relative z-10">
-                  <Badge className="bg-white/15 text-white border-white/20 mb-6 font-bold text-sm">
-                    <Package size={14} className="mr-1" /> Marktplatz
-                  </Badge>
-                  <h3 className="text-3xl font-black mb-4">Sofort-Angebote: Ihr digitales Schaufenster</h3>
-                  <p className="text-slate-300 font-medium leading-relaxed mb-8">
-                    Neben Ausschreibungen bietet proFleet Ihnen einen vollwertigen Marktplatz für sofort verfügbare Fahrzeuge.
-                    Listen Sie Lagerfahrzeuge, Vorführwagen und Tageszulassungen mit Festpreis — Käufer finden Sie über Suche und Filter.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                    <div className="flex gap-3 items-start">
-                      <CheckCircle2 className="text-emerald-400 shrink-0 mt-0.5" size={18} />
-                      <span className="text-slate-300 font-medium text-sm">Lagerfahrzeuge mit allen Ausstattungsdetails präsentieren</span>
-                    </div>
-                    <div className="flex gap-3 items-start">
-                      <CheckCircle2 className="text-emerald-400 shrink-0 mt-0.5" size={18} />
-                      <span className="text-slate-300 font-medium text-sm">Kauf-, Leasing- und Finanzierungspreise hinterlegen</span>
-                    </div>
-                    <div className="flex gap-3 items-start">
-                      <CheckCircle2 className="text-emerald-400 shrink-0 mt-0.5" size={18} />
-                      <span className="text-slate-300 font-medium text-sm">Vorführwagen und Tageszulassungen vermarkten</span>
-                    </div>
-                    <div className="flex gap-3 items-start">
-                      <CheckCircle2 className="text-emerald-400 shrink-0 mt-0.5" size={18} />
-                      <span className="text-slate-300 font-medium text-sm">Bilder und Konfigurationsdokumente hochladen</span>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-
-
-            </div>
-          )}
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className="launch-section dealers-cta">
+        <div className="launch-bg" aria-hidden="true">
+          <div className="launch-blob lb1" />
+          <div className="launch-blob lb2" />
+        </div>
+        <div className="pf-container launch-inner">
+          <Reveal as="h2" className="launch-title">
+            {t.how.closingTitle}
+          </Reveal>
+          <Reveal as="p" className="launch-desc" delay={80}>
+            {t.how.closingSub}
+          </Reveal>
+          <Reveal delay={160}>
+            <div className="how-cta-row">
+              <Link
+                href={`${APP_URL}/registrieren`}
+                className="cta cta-primary cta-lg cta-on-dark"
+              >
+                {t.nav.register}
+                <span className="cta-arrow">
+                  <ArrowRight size={16} />
+                </span>
+              </Link>
+              <Link href="/fuer-haendler" className="cta cta-ghost cta-lg cta-on-dark">
+                {t.nav.dealers}
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }
