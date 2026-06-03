@@ -14,7 +14,7 @@ export default function ImpressumPage() {
             <h2 className="text-xl font-bold text-navy-950 mb-3">Angaben gemäß § 5 TMG</h2>
             <p className="mb-1 font-semibold text-navy-950">proFleet GmbH</p>
             <p>Hartstraße 23</p>
-            <p>82110 München</p>
+            <p>82110 Germering</p>
             <p className="mt-4">Tel. +49 (0) 89 306365-10</p>
             <p>Fax +49 (0) 89 306365-28</p>
             <p>

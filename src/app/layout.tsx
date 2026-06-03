@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "@/components/providers/auth-provider";
-import { SubscriptionProvider } from "@/components/providers/subscription-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { LanguageProvider } from "@/components/providers/language-provider";
-import { Toaster } from "sonner";
 
 const display = Inter_Tight({
   subsets: ["latin"],
@@ -45,20 +42,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" suppressHydrationWarning className={`${display.variable} ${inter.variable} ${jbm.variable}`}>
+    <html
+      lang="de"
+      suppressHydrationWarning
+      className={`${display.variable} ${inter.variable} ${jbm.variable}`}
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: FOUC_SCRIPT }} />
       </head>
       <body className="antialiased">
         <ThemeProvider>
-          <LanguageProvider>
-            <AuthProvider>
-              <SubscriptionProvider>
-                {children}
-                <Toaster richColors position="top-right" />
-              </SubscriptionProvider>
-            </AuthProvider>
-          </LanguageProvider>
+          <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
